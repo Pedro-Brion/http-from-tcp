@@ -16,7 +16,7 @@ export class HttpRequest {
 
     let previousLine = "";
     for (let i = 1; i <= requestLines.length; i++) {
-      const line = requestLines[i];
+      const line = requestLines[i]??"";
       if ((previousLine === "\r\n" && line === "\r\n") || !line.includes(":"))
         break;
 
