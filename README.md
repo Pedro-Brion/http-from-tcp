@@ -1,4 +1,4 @@
-# http-server
+# http-from-tcp
 
 An HTTP/1.1 server written in TypeScript on top of Node's raw `net` module. It doesn't use `http`, Express or any other framework: it reads bytes from a TCP socket, parses the request itself, routes it, and writes the response by hand.
 
