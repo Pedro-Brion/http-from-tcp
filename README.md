@@ -137,7 +137,3 @@ The `Middleware` type and the `addGlobalMiddleware()` entry point on `HttpServer
 - [ ] A `next` mechanism to pass control down the chain or stop it
 - [ ] Per-route middleware
 - [ ] Error-handling middleware
-
-## License
-
-ISC
