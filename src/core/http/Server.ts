@@ -26,12 +26,17 @@ export class HttpServer {
         if (!route.found) response.status(404).send();
         else if (!route.handle) response.status(405).send();
         else route.handle(request, response);
+        socket.end();
         socket.destroy();
       });
 
       socket.on("close", () => {
         console.log("Closing!\r\n\r\n:::::::::\r\n");
         socket.end();
+      });
+
+      socket.on("end", () => {
+        console.log("EOF.");
       });
     });
   }
