@@ -12,23 +12,24 @@ export class HttpResponse {
   private p_statusCode: string = "404";
   headers: HttpHeaders = {
     "Content-type": "text/plain",
+    Server: "node20",
   };
 
   constructor(private p_socket: net.Socket) {}
 
-  status(number: string): HttpResponse {
-    this.p_statusCode = number;
+  status(number: string | number): HttpResponse {
+    this.p_statusCode = number.toString();
     return this;
   }
 
   send(response?: string) {
     const contentLength = byteSize(response ?? "");
-    let httpResponse = `HTTP/1.1 ${this.p_statusCode}\r\nContent-Length:${contentLength}`;
+    let httpResponse = `HTTP/1.1 ${this.p_statusCode}\r\nContent-Length: ${contentLength}`;
 
     for (let header in this.headers) {
-      httpResponse = httpResponse + `\r\n${header}:${this.headers[header]}`;
+      httpResponse = httpResponse + `\r\n${header}: ${this.headers[header]}`;
     }
-    httpResponse = httpResponse + `\r\n\r\n${response}`;
+    httpResponse = httpResponse + `\r\n\r\n${response??""}`;
 
     this.p_socket.write(httpResponse);
   }

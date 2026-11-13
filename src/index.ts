@@ -7,7 +7,8 @@ http.route("/").get((_req, _res) => _res.status("200").send("Ok, server funciona
 
 http.route("/echo/:str").get((_req, _res) => {
   const { params } = _req;
-  _res.status("200").send(params.str);
+  _res.status(200);
+  _res.send(params.str);
 });
 
 http.init(() => console.log("Server started on port " + port));
