@@ -3,10 +3,11 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "ts-node-dev --respawn --quiet src/index.ts",
     "start": "npm run build && node build/index.js",
-    "build": "node build.js"
+    "build": "node build.mjs"
   },
   "keywords": [],
   "author": "",
