@@ -1,13 +1,16 @@
 import * as net from "net";
-import { HttpRouter } from "./Router";
-import { HttpResponse } from "./Response";
-import { HttpRequest } from "./Request";
-import { RouteBuilder } from "./Route";
+import { HttpRouter } from "./Router.ts";
+import { HttpResponse } from "./Response.ts";
+import { HttpRequest } from "./Request.ts";
+import { RouteBuilder } from "./Route.ts";
+import { Middleware } from "./types.ts";
 
 export class HttpServer {
   private p_server: net.Server;
   private p_port: number;
   private p_router: HttpRouter;
+
+  private p_global_middlewares: Middleware[] = [];
 
   constructor(port: number) {
     this.p_router = HttpRouter.instance;
@@ -48,4 +51,8 @@ export class HttpServer {
   route(route: string): RouteBuilder {
     return this.p_router.route(route);
   }
+
+  private p_handleDataReceived(_data: Buffer) {}
+
+  addGlobalMiddleware(input: Middleware | Middleware[]): void {}
 }
