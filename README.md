@@ -13,7 +13,7 @@ The goal is to explore how HTTP works at the socket level rather than to ship a 
 - Request parsing: method, path, headers and body
 - Fluent route registration with `GET` and `POST`
 - Path parameters (`/echo/:str`) available on `req.params`
-- Radix-style route tree that matches by path segment
+- Trie route tree that matches by path segment
 - `404 Not Found` for unknown paths, `405 Method Not Allowed` for known paths with an unregistered method
 - Responses with `Content-Length` computed from the UTF-8 byte size of the body
 
