@@ -1,5 +1,5 @@
 import * as net from "net";
-import { byteSize } from "./utils";
+import { byteSize } from "./utils.ts";
 
 const ReasonPhrase: Record<string, string> = {
   "200": "OK",

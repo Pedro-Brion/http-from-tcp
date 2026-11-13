@@ -1,5 +1,5 @@
-import { HttpRouter } from "./Router";
-import { HttpMethod, RouteHandler } from "./types";
+import { HttpRouter } from "./Router.ts";
+import { HttpMethod, RouteHandler } from "./types.ts";
 
 export class RouteNode {
   private p_methods: Map<HttpMethod, RouteHandler>;

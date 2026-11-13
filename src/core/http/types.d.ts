@@ -1,5 +1,5 @@
-import { HttpRequest } from "./Request";
-import { HttpResponse } from "./Response";
+import { HttpRequest } from "./Request.ts";
+import { HttpResponse } from "./Response.ts";
 
 export type RouteHandler = (req: HttpRequest, res: HttpResponse) => void;
 export type RouteParams = { [key: string]: string };

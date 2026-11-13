@@ -1,4 +1,4 @@
-import { HttpMethod, RouteParams } from "./types";
+import type { HttpMethod, RouteParams } from "./types.ts";
 type HttpHeaders = Record<string, string>;
 export class HttpRequest {
   method: HttpMethod;

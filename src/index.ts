@@ -1,4 +1,4 @@
-import { HttpServer } from "./core/http/Server";
+import { HttpServer } from "./core/http/Server.ts";
 
 const port = 3000;
 const http = new HttpServer(port);
