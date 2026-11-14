@@ -43,7 +43,7 @@ curl -i http://localhost:3000/echo/hello
 
 | Script       | What it does                                               |
 | ------------ | ---------------------------------------------------------- |
-| `pnpm dev`   | Runs `src/index.ts` with `ts-node-dev` and restarts on change |
+| `pnpm dev`   | Runs `src/index.ts` with `tsx` and restarts on change |
 | `pnpm build` | Compiles TypeScript into `build/` (`build.mjs` calls `tsc`) |
 | `pnpm start` | Builds, then runs `build/index.js`                          |
 
