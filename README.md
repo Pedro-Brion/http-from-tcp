@@ -1,4 +1,4 @@
-# http-server
+# http-from-tcp
 
 An HTTP/1.1 server written in TypeScript on top of Node's raw `net` module. It doesn't use `http`, Express or any other framework: it reads bytes from a TCP socket, parses the request itself, routes it, and writes the response by hand.
 
@@ -13,7 +13,7 @@ The goal is to explore how HTTP works at the socket level rather than to ship a 
 - Request parsing: method, path, headers and body
 - Fluent route registration with `GET` and `POST`
 - Path parameters (`/echo/:str`) available on `req.params`
-- Radix-style route tree that matches by path segment
+- Trie route tree that matches by path segment
 - `404 Not Found` for unknown paths, `405 Method Not Allowed` for known paths with an unregistered method
 - Responses with `Content-Length` computed from the UTF-8 byte size of the body
 
@@ -137,7 +137,3 @@ The `Middleware` type and the `addGlobalMiddleware()` entry point on `HttpServer
 - [ ] A `next` mechanism to pass control down the chain or stop it
 - [ ] Per-route middleware
 - [ ] Error-handling middleware
-
-## License
-
-ISC
