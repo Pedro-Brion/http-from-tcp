@@ -19,8 +19,6 @@ export class HttpServer {
     this.p_server = net.createServer((socket) => {
       const response = new HttpResponse(socket);
       socket.on("data", (_data) => {
-        console.log("Clearing");
-        console.clear();
         console.log("RECEIVED DATA::::::\r\n" + _data.toString());
         console.log("\r\n\r\n");
         const request = new HttpRequest(_data.toString());
